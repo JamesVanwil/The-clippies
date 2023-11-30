@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerClickHandler
+public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     private RectTransform rectTransform;
     private Canvas canvas;
@@ -17,8 +15,8 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IPointe
     {
         // Get the RectTransform, Canvas, and CanvasGroup components
         rectTransform = GetComponent<RectTransform>();
-        canvas = GetComponentInParent<Canvas>();
         canvasGroup = GetComponent<CanvasGroup>();
+        canvas = GetComponentInParent<Canvas>();
 
         // Ensure the CanvasGroup exists
         if (canvasGroup == null)
@@ -42,7 +40,8 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IPointe
     public void OnDrag(PointerEventData eventData)
     {
         // Move the object with the mouse/finger
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        Vector2 newPosition = rectTransform.anchoredPosition + eventData.delta / canvas.scaleFactor;
+        rectTransform.anchoredPosition = ClampToCanvas(newPosition);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -58,5 +57,18 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler, IPointe
         {
             secondImage.SetActive(!secondImage.activeSelf);
         }
+    }
+
+    // Clamp the position to stay within the canvas boundaries
+    private Vector2 ClampToCanvas(Vector2 position)
+    {
+        float canvasWidth = canvas.GetComponent<RectTransform>().sizeDelta.x;
+        float canvasHeight = canvas.GetComponent<RectTransform>().sizeDelta.y;
+
+        // Calculate the clamped position
+        position.x = Mathf.Clamp(position.x, -canvasWidth / 2f, canvasWidth / 2f);
+        position.y = Mathf.Clamp(position.y, -canvasHeight / 2f, canvasHeight / 2f);
+
+        return position;
     }
 }
