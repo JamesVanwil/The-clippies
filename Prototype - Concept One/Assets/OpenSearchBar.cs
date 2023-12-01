@@ -11,6 +11,7 @@ public class OpenSearchBar : MonoBehaviour
     public GameObject Fb;
     public GameObject Gmail;
     public GameObject Insta;
+ 
 
     // Start is called before the first frame update
     void Start()
