@@ -47,8 +47,8 @@ public class CloseWindow : MonoBehaviour, IPointerClickHandler
             }
 
             // Calculate the desired size and position to fill the entire screen
-            Vector2 screenSize = new Vector2(Screen.width, Screen.height);
-            rt.sizeDelta = screenSize * 5;
+            Vector2 screenSize = new Vector2(Screen.width, Screen.height * 2);
+            rt.sizeDelta = screenSize * 3;
             rt.anchoredPosition = screenSize / 3;
         }
         else
