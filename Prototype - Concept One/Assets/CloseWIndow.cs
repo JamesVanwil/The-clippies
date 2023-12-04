@@ -7,9 +7,11 @@ using UnityEngine.EventSystems;
 public class CloseWindow : MonoBehaviour, IPointerClickHandler
 {
     public Image imageToDeactivate;
+
     public Image imageToToggleFullScreen;
 
     private bool isFullScreen = false;
+
 
     // Implement the click handler
     public void OnPointerClick(PointerEventData eventData)
@@ -21,13 +23,17 @@ public class CloseWindow : MonoBehaviour, IPointerClickHandler
             imageToDeactivate.gameObject.SetActive(false);
         }
 
+
         // Check if the image to toggle fullscreen is not null
         if (imageToToggleFullScreen != null)
         {
             // Toggle fullscreen for the specified image
             ToggleFullScreen(imageToToggleFullScreen);
         }
+
+
     }
+
 
     // Function to toggle fullscreen for the given image
     private void ToggleFullScreen(Image image)
@@ -55,4 +61,6 @@ public class CloseWindow : MonoBehaviour, IPointerClickHandler
             rt.position = new Vector3(1300, 750, rt.position.z);
         }
     }
+
+
 }

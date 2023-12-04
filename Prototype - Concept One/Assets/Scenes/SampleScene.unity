@@ -215,7 +215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &83916825
 RectTransform:
   m_ObjectHideFlags: 0
@@ -670,7 +670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &345356927
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1810,7 +1810,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 593, y: 263, z: -454}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2634,7 +2634,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0030441, y: -415.59}
+  m_AnchoredPosition: {x: 0.0030441, y: -408}
   m_SizeDelta: {x: 3387, y: 60.1667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1480570431
@@ -2822,7 +2822,6 @@ GameObject:
   - component: {fileID: 1534148571}
   - component: {fileID: 1534148574}
   - component: {fileID: 1534148573}
-  - component: {fileID: 1534148575}
   m_Layer: 5
   m_Name: Fullscreen
   m_TagString: Untagged
@@ -2887,20 +2886,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534148570}
   m_CullTransparentMesh: 1
---- !u!114 &1534148575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1534148570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41c295ade1601904baac61e38c9f37ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imageToDeactivate: {fileID: 0}
-  imageToToggleFullScreen: {fileID: 1596087279}
 --- !u!1 &1551917055
 GameObject:
   m_ObjectHideFlags: 0
@@ -3179,7 +3164,7 @@ GameObject:
   - component: {fileID: 1596087280}
   - component: {fileID: 1596087279}
   m_Layer: 5
-  m_Name: WebPage
+  m_Name: WebPage1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3265,7 +3250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1811662848
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4106,7 +4091,7 @@ GameObject:
   - component: {fileID: 1985287297}
   - component: {fileID: 1985287300}
   - component: {fileID: 1985287299}
-  - component: {fileID: 1985287298}
+  - component: {fileID: 1985287301}
   m_Layer: 5
   m_Name: Close
   m_TagString: Untagged
@@ -4133,20 +4118,6 @@ RectTransform:
   m_AnchoredPosition: {x: 563.5904, y: 248.8695}
   m_SizeDelta: {x: 46.3743, y: 30.0241}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1985287298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985287296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41c295ade1601904baac61e38c9f37ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imageToDeactivate: {fileID: 1596087279}
-  imageToToggleFullScreen: {fileID: 0}
 --- !u!114 &1985287299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4185,6 +4156,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985287296}
   m_CullTransparentMesh: 1
+--- !u!114 &1985287301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985287296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c295ade1601904baac61e38c9f37ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageToDeactivate: {fileID: 1596087279}
+  imageToToggleFullScreen: {fileID: 0}
 --- !u!1 &2082355426
 GameObject:
   m_ObjectHideFlags: 0
@@ -4434,7 +4419,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 963194227}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
