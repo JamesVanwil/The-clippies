@@ -398,7 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c295ade1601904baac61e38c9f37ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageToDeactivate: {fileID: 0}
+  imageToDeactivate: {fileID: 314235041}
   imageToToggleFullScreen: {fileID: 0}
 --- !u!114 &124956917
 MonoBehaviour:
@@ -952,7 +952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c295ade1601904baac61e38c9f37ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageToDeactivate: {fileID: 0}
+  imageToDeactivate: {fileID: 368055720}
   imageToToggleFullScreen: {fileID: 0}
 --- !u!114 &549329081
 MonoBehaviour:
@@ -2302,7 +2302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c295ade1601904baac61e38c9f37ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageToDeactivate: {fileID: 0}
+  imageToDeactivate: {fileID: 1098764690}
   imageToToggleFullScreen: {fileID: 0}
 --- !u!114 &1453390858
 MonoBehaviour:
