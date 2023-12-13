@@ -5,25 +5,40 @@ using UnityEngine.SceneManagement;
 
 public class PlayerInteraction : MonoBehaviour
 {
-
     RaycastHit hit;
     private bool canChangeScene;
+    public Camera PlayerCamera;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Ray ray = new Ray(transform.position, transform.forward);
+        Ray ray = new Ray(transform.position, PlayerCamera.transform.forward);
 
         if (Physics.Raycast(ray, out hit))
         {
-            canChangeScene = true;
-        } else
+           
+            if (hit.collider.CompareTag("Pc"))
+            {
+                canChangeScene = true;
+            }
+          
+            else if (hit.collider.CompareTag("Phone"))
+            {
+                canChangeScene = true;
+                
+            }
+            else
+            {
+                canChangeScene = false;
+            }
+        }
+        else
         {
             canChangeScene = false;
         }
@@ -33,7 +48,16 @@ public class PlayerInteraction : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
-            SceneManager.LoadScene(1);
+          
+            if (hit.collider.CompareTag("Pc"))
+            {
+                SceneManager.LoadScene(2);
+            }
+            else if (hit.collider.CompareTag("Phone"))
+            {
+                SceneManager.LoadScene(3);
+              
+            }
         }
     }
 }
