@@ -29,7 +29,6 @@ public class ChangeScenes : MonoBehaviour
     {
         if (canChangeScene && Input.GetKeyDown(KeyCode.E))
         {
-           
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
