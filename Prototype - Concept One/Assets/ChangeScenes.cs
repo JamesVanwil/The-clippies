@@ -5,36 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScenes : MonoBehaviour
 {
-    public bool isPcScene = false;
-    public bool isPhoneScene = false;
+    private bool canChangeScene = false;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player enter zone");
+            canChangeScene = true;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (other.CompareTag("Player"))
         {
-            if (isPcScene)
-            {
-                isPhoneScene = true;
-                isPcScene = false;
-                SceneManager.LoadScene("PhoneScene");
-            }
-            else if (isPhoneScene)
-            {
-                isPhoneScene = false;
-                isPcScene = true;
-                SceneManager.LoadScene("PcScene");
-            }
-
+            Debug.Log("Player exit zone");
+            canChangeScene = false;
         }
-        
-      
+    }
 
+    private void Update()
+    {
+        if (canChangeScene && Input.GetKeyDown(KeyCode.E))
+        {
+           
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            SceneManager.LoadScene(1);
+        }
     }
 }
