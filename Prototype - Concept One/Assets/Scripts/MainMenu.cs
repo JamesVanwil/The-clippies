@@ -14,4 +14,9 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void BackTo3DView()
+    {
+        SceneManager.LoadScene(3);
+    }
 }
