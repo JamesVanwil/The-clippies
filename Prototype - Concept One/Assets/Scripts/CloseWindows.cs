@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class CloseWindow : MonoBehaviour, IPointerClickHandler
+public class CloseWindows : MonoBehaviour, IPointerClickHandler
 {
     //public Image imageToDeactivate;
 
