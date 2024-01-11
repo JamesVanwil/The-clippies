@@ -11,6 +11,10 @@ public class AppManager : MonoBehaviour
     public Image secondOpenedAppImage;
     public GameObject secondHomeButton;
 
+
+    public Image thirdOpenedAppImage;
+    public GameObject thirdHomeButton;
+
     private void Start()
     {
         openedAppImage.enabled = false;
@@ -18,6 +22,10 @@ public class AppManager : MonoBehaviour
 
         secondOpenedAppImage.enabled = false;
         secondHomeButton.SetActive(false);
+
+        thirdOpenedAppImage.enabled = false;
+        thirdHomeButton.SetActive(false);
+
     }
 
     public void Openapp1()
@@ -42,5 +50,17 @@ public class AppManager : MonoBehaviour
     {
         secondOpenedAppImage.enabled = false;
         secondHomeButton.SetActive(false);
+    }
+
+    public void Openapp3()
+    {
+        thirdOpenedAppImage.enabled = true;
+        thirdHomeButton.SetActive(true);
+    }
+
+    public void Closeapp3()
+    {
+        thirdOpenedAppImage.enabled = false;
+        thirdHomeButton.SetActive(false);
     }
 }
