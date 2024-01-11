@@ -41,12 +41,14 @@ public class CursorManager : MonoBehaviour
         {
             SetCursor(cursorScene2);
         }
-        // Add more conditions for additional scenes
+       
     }
 
+   
     private void SetCursor(Texture2D cursorTexture)
     {
         Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
     }
+
 
 }
