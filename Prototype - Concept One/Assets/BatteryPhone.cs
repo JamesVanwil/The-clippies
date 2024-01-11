@@ -6,9 +6,9 @@ using TMPro;
 
 public class BatteryPhone : MonoBehaviour
 {
-    public TMP_Text batteryText; // Attach a UI Text to this variable in the Unity Editor
-    public float startingBattery = 100f; // Starting battery percentage
-    public float decreaseRate = 1f; // Battery decrease rate per second
+    public TMP_Text batteryText; 
+    public float startingBattery = 100f; 
+    public float decreaseRate = 1f; 
 
     void Start()
     {

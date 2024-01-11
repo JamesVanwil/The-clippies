@@ -4048,8 +4048,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c413475f86f853e41b818ad2c11c98a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorScene1: {fileID: 2800000, guid: 4ec1d5869f6356b4ab98ab6fdb84817d, type: 3}
-  cursorScene2: {fileID: 2800000, guid: 739875f00c8ceb94c8b699a7d54090ac, type: 3}
+  cursorScene1: {fileID: 2800000, guid: 5d42aa3e0ad33074f9eee2e5f430340e, type: 3}
+  cursorScene2: {fileID: 2800000, guid: 037fd72d98560a8498cee29129a78b64, type: 3}
 --- !u!4 &1965536256
 Transform:
   m_ObjectHideFlags: 0
