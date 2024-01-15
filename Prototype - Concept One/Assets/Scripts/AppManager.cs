@@ -5,17 +5,29 @@ using UnityEngine.UI;
 
 public class AppManager : MonoBehaviour
 {
+
+    [Header("SMS")]
+
     public GameObject openedAppImage;
     public GameObject homeButton;
     public GameObject TextsPage;
     public GameObject CallsPage;
 
+    [Header("Instagram")]
+
     public GameObject secondOpenedAppImage;
     public GameObject secondHomeButton;
+    public GameObject FeedPage;
+    public GameObject ProfilePage;
+    public GameObject PostOneOnFeedComments;
+    
+    private bool isPostCommentsActive = false;
 
 
     public GameObject thirdOpenedAppImage;
     public GameObject thirdHomeButton;
+
+
 
     private void Start()
     {
@@ -30,6 +42,11 @@ public class AppManager : MonoBehaviour
 
         TextsPage.SetActive(false);
         CallsPage.SetActive(false);
+
+        FeedPage.SetActive(false);
+        ProfilePage.SetActive(false);
+
+        PostOneOnFeedComments.SetActive(false);
     
 
        }
@@ -54,12 +71,15 @@ public class AppManager : MonoBehaviour
     {
         secondOpenedAppImage.SetActive(true);
         secondHomeButton.SetActive(true);
+        FeedPage.SetActive(true);
     }
 
     public void Closeapp2()
     {
         secondOpenedAppImage.SetActive(false);
         secondHomeButton.SetActive(false);
+        FeedPage.SetActive(false);
+        ProfilePage.SetActive(false);
     }
 
     public void Openapp3()   
@@ -85,4 +105,25 @@ public class AppManager : MonoBehaviour
         TextsPage.SetActive(false);
         CallsPage.SetActive(true);
     }
+
+    public void OpenFeedPage()
+    {
+        FeedPage.SetActive(true);
+        ProfilePage.SetActive(false);
+    }
+
+    public void OpenProfilePage()
+    {
+        FeedPage.SetActive(false);
+        ProfilePage.SetActive(true);
+    }
+
+    public void ShowPostOneComments()
+    {
+        isPostCommentsActive = !isPostCommentsActive;
+
+        
+        PostOneOnFeedComments.SetActive(isPostCommentsActive);
+    }
+    
 }
