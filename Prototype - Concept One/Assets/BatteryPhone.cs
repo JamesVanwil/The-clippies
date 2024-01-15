@@ -27,14 +27,14 @@ public class BatteryPhone : MonoBehaviour
         // Clamp the battery level to be within the range of 0 to 100
         startingBattery = Mathf.Clamp(startingBattery, 0f, 100f);
 
-        // Update the UI Text with the new battery level
+        // Update the UI Text 
         UpdateBatteryText();
 
         // Check if the battery is completely drained
         if (startingBattery <= 0f)
         {
             Debug.Log("Battery is empty!");
-            // You might want to perform additional actions here, e.g., game over, alert, etc.
+       
         }
     }
 

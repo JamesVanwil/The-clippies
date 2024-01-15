@@ -5,62 +5,84 @@ using UnityEngine.UI;
 
 public class AppManager : MonoBehaviour
 {
-    public Image openedAppImage;
+    public GameObject openedAppImage;
     public GameObject homeButton;
+    public GameObject TextsPage;
+    public GameObject CallsPage;
 
-    public Image secondOpenedAppImage;
+    public GameObject secondOpenedAppImage;
     public GameObject secondHomeButton;
 
 
-    public Image thirdOpenedAppImage;
+    public GameObject thirdOpenedAppImage;
     public GameObject thirdHomeButton;
 
     private void Start()
     {
-        openedAppImage.enabled = false;
+        openedAppImage.SetActive(false);
         homeButton.SetActive(false);
 
-        secondOpenedAppImage.enabled = false;
+        secondOpenedAppImage.SetActive(false);
         secondHomeButton.SetActive(false);
 
-        thirdOpenedAppImage.enabled = false;
+        thirdOpenedAppImage.SetActive(false);
         thirdHomeButton.SetActive(false);
 
-    }
+        TextsPage.SetActive(false);
+        CallsPage.SetActive(false);
+    
+
+       }
 
     public void Openapp1()
     {
-        openedAppImage.enabled = true;
+        openedAppImage.SetActive(true);
         homeButton.SetActive(true);
+        TextsPage.SetActive(true);
+
     }
 
     public void Closeapp1()
     {
-        openedAppImage.enabled = false;
+        openedAppImage.SetActive(false);
         homeButton.SetActive(false);
+        TextsPage.SetActive(false);
+        CallsPage.SetActive(false);
     }
 
     public void Openapp2()
     {
-        secondOpenedAppImage.enabled = true;
+        secondOpenedAppImage.SetActive(true);
         secondHomeButton.SetActive(true);
     }
 
     public void Closeapp2()
     {
-        secondOpenedAppImage.enabled = false;
+        secondOpenedAppImage.SetActive(false);
         secondHomeButton.SetActive(false);
     }
 
-    public void Openapp3()
+    public void Openapp3()   
     {
-        thirdOpenedAppImage.enabled = true;
+        thirdOpenedAppImage.SetActive(true);
         thirdHomeButton.SetActive(true);
     }
 
     public void Closeapp3()
     {
-        thirdOpenedAppImage.enabled = false;
+        thirdOpenedAppImage.SetActive(false);
         thirdHomeButton.SetActive(false);
+    }
+
+    public void OpenTextPage()
+    {
+        TextsPage.SetActive(true);
+        CallsPage.SetActive(false);
+    }
+
+    public void OpenCallsPage()
+    {
+        TextsPage.SetActive(false);
+        CallsPage.SetActive(true);
     }
 }
