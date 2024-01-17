@@ -210,7 +210,7 @@ public class FirstPersonController : MonoBehaviour
             yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
 
             // Clamp yaw to limit rotation to 90 degrees
-            yaw = Mathf.Clamp(yaw, -30f, 170f);
+            yaw = Mathf.Clamp(yaw, 40f, 140f);
 
 
             if (!invertCamera)
