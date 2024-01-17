@@ -35,6 +35,10 @@ public class AppManager : MonoBehaviour
 
     public GameObject DateTimePost1;
 
+    [Header("112")]
+
+    public GameObject PoliceApp;
+
 
 
     private void Start()
@@ -169,6 +173,16 @@ public class AppManager : MonoBehaviour
     {
         isPostCommentsActive = !isPostCommentsActive;
         DateTimePost1.SetActive(isPostCommentsActive);
+    }
+
+    public void Open112App()
+    {
+        PoliceApp.SetActive(true);
+    }
+
+    public void Close112App()
+    {
+        PoliceApp.SetActive(false);
     }
 
 
