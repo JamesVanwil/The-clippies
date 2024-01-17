@@ -20,6 +20,8 @@ public class AppManager : MonoBehaviour
     public GameObject FeedPage;
     public GameObject ProfilePage;
     public GameObject PostOneOnFeedComments;
+
+
     
     private bool isPostCommentsActive = false;
 
@@ -29,6 +31,9 @@ public class AppManager : MonoBehaviour
     public GameObject thirdHomeButton;
     public GameObject SnapProfile;
     public GameObject SnapChats;
+    public GameObject SnapMemories;
+
+    public GameObject DateTimePost1;
 
 
 
@@ -53,6 +58,9 @@ public class AppManager : MonoBehaviour
 
         SnapProfile.SetActive(false);
         SnapChats.SetActive(false);
+        SnapMemories.SetActive(false);
+
+        DateTimePost1.SetActive(false);
     
 
        }
@@ -100,6 +108,7 @@ public class AppManager : MonoBehaviour
         thirdHomeButton.SetActive(false);
         SnapProfile.SetActive(false);
         SnapChats.SetActive(false);
+        SnapMemories.SetActive(false);
     }
 
     public void OpenTextPage()
@@ -138,14 +147,31 @@ public class AppManager : MonoBehaviour
     {
         SnapChats.SetActive(false);
         SnapProfile.SetActive(true);
-       
+        SnapMemories.SetActive(false);
+
     }
 
     public void OpenSnapChats()
     {
         SnapChats.SetActive(true);
         SnapProfile.SetActive(false);
+        SnapMemories.SetActive(false);
     }
+
+    public void OpenSnapMemories()
+    {
+        SnapChats.SetActive(false);
+        SnapProfile.SetActive(false);
+        SnapMemories.SetActive(true);
+    }
+
+    public void MemoriesCommentPhoto1()
+    {
+        isPostCommentsActive = !isPostCommentsActive;
+        DateTimePost1.SetActive(isPostCommentsActive);
+    }
+
+
 
 
 }
