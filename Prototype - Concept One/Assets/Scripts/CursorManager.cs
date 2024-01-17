@@ -11,28 +11,26 @@ public class CursorManager : MonoBehaviour
 
     private void Awake()
     {
-        // Ensure that this GameObject (and the script) won't be destroyed when a new scene is loaded
         DontDestroyOnLoad(gameObject);
 
-        // Register the method to be called when the scene is changed
+        
         SceneManager.sceneLoaded += OnSceneLoaded;
 
-        // Set the initial cursor based on the first loaded scene
+       
         SetCursorTexture();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Change cursor texture when a new scene is loaded
+      
         SetCursorTexture();
     }
 
     private void SetCursorTexture()
     {
-        // Get the current scene name
+       
         string currentScene = SceneManager.GetActiveScene().name;
 
-        // Set the cursor based on the current scene
         if (currentScene == "PcScene")
         {
             SetCursor(cursorScene1);

@@ -20,7 +20,7 @@ public class TimeClock : MonoBehaviour
         // Get the current time
         DateTime currentTime = DateTime.Now;
 
-        // Format the time as a string (24-hour format)
+        // Format the time as a string
         string timeString = currentTime.ToString("HH:mm");
 
         // Update the UI text with the current time
