@@ -81,7 +81,7 @@ public class PoliceAppManager : MonoBehaviour
     public void CheckAnswer()
     {
         // Compare the input text with the correct answer (replace "CorrectAnswer" with your actual answer)
-        string correctAnswer = "CorrectAnswer";
+        string correctAnswer = "Kliefdiep 24";
         if (answerInputField.text.ToLower() == correctAnswer.ToLower())
         {
             // Player provided the correct answer
@@ -108,6 +108,7 @@ public class PoliceAppManager : MonoBehaviour
 
         // Display the correct image
         correctImage.gameObject.SetActive(true);
+        StartCoroutine(DelayBeforeMainMenu());
 
         // You can perform additional actions here if needed
     }
