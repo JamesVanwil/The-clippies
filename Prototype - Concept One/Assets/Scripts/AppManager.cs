@@ -34,6 +34,8 @@ public class AppManager : MonoBehaviour
     public GameObject SnapMemories;
 
     public GameObject DateTimePost1;
+    public GameObject DateTimePost2;
+    public GameObject DateTimePost3;
 
     [Header("112")]
 
@@ -65,9 +67,12 @@ public class AppManager : MonoBehaviour
         SnapMemories.SetActive(false);
 
         DateTimePost1.SetActive(false);
-    
+        DateTimePost2.SetActive(false);
+        DateTimePost3.SetActive(false);
 
-       }
+
+
+    }
 
     public void Openapp1()
     {
@@ -173,6 +178,18 @@ public class AppManager : MonoBehaviour
     {
         isPostCommentsActive = !isPostCommentsActive;
         DateTimePost1.SetActive(isPostCommentsActive);
+    }
+
+    public void MemoriesCommentPhoto2()
+    {
+        isPostCommentsActive = !isPostCommentsActive;
+        DateTimePost2.SetActive(isPostCommentsActive);
+    }
+
+    public void MemoriesCommentPhoto3()
+    {
+        isPostCommentsActive = !isPostCommentsActive;
+        DateTimePost3.SetActive(isPostCommentsActive);
     }
 
     public void Open112App()
