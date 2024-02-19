@@ -72,12 +72,12 @@ using TMPro;
 
         public void ChangeText(int choice)
         {
-        if (choice == rightOrWrong[randomNumber])
+        if (choice == rightOrWrong[randomNumber]) // if right choice
         { 
              points++;
             timeLeft += 2f; //1f
         }
-        else
+        else        // if wrong choice
         {
             timeLeft -= 1f; // 0.5f
             points--;
