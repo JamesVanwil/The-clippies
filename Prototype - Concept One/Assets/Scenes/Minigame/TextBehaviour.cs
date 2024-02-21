@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 
     public class TextBehaviour : MonoBehaviour
@@ -61,6 +63,8 @@ using TMPro;
             else if (timeLeft == 0f)
             {
                 Debug.Log("U lose");
+                SceneManager.LoadScene(3);
+
             }
              else if (timeLeft < 0f)
             {
@@ -76,6 +80,12 @@ using TMPro;
         { 
              points++;
             timeLeft += 2f; //1f
+
+            if (points >= 10)
+            {
+                //unlock hint
+                SceneManager.LoadScene(3);
+            }
         }
         else        // if wrong choice
         {
@@ -84,7 +94,7 @@ using TMPro;
         }
             randomNumber = Random.Range(0, 9);
         //Debug.Log($"{points}");
-            pointsT.text = $"{points}";
+            pointsT.text = $"{points}/10";
             mainText.text = emailList[randomNumber];
         }
     }
