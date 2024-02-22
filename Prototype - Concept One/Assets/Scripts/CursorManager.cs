@@ -9,6 +9,13 @@ public class CursorManager : MonoBehaviour
     public Texture2D cursorScene1;
     public Texture2D cursorScene2;
 
+    public bool showCursor = true;
+
+    private void Start()
+    {
+
+        Cursor.visible = showCursor;
+    }
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);

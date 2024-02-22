@@ -390,6 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorScene1: {fileID: 2800000, guid: 5d42aa3e0ad33074f9eee2e5f430340e, type: 3}
   cursorScene2: {fileID: 2800000, guid: 037fd72d98560a8498cee29129a78b64, type: 3}
+  showCursor: 1
 --- !u!4 &1135288572
 Transform:
   m_ObjectHideFlags: 0
