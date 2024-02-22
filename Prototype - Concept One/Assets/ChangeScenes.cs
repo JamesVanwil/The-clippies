@@ -35,4 +35,8 @@ public class ChangeScenes : MonoBehaviour
             SceneManager.LoadScene(1);
         }
     }
+    public void GoToHintScene()
+    {
+        SceneManager.LoadScene(4);
+    }
 }
