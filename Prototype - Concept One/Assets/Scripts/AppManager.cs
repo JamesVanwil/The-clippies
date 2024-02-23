@@ -20,9 +20,10 @@ public class AppManager : MonoBehaviour
     public GameObject FeedPage;
     public GameObject ProfilePage;
     public GameObject PostOneOnFeedComments;
+    public GameObject PostTwoOnFeedComments;
+    public GameObject PostThreeOnFeedComments;
+    public GameObject PostFourOnFeedComments;
 
-
-    
     private bool isPostCommentsActive = false;
 
     [Header("Snapchat")]
@@ -61,6 +62,7 @@ public class AppManager : MonoBehaviour
         ProfilePage.SetActive(false);
 
         PostOneOnFeedComments.SetActive(false);
+        PostTwoOnFeedComments.SetActive(false);
 
         SnapProfile.SetActive(false);
         SnapChats.SetActive(false);
@@ -151,6 +153,31 @@ public class AppManager : MonoBehaviour
         
         PostOneOnFeedComments.SetActive(isPostCommentsActive);
     }
+
+    public void ShowPostTwoComments()
+    {
+        isPostCommentsActive = !isPostCommentsActive;
+
+
+        PostTwoOnFeedComments.SetActive(isPostCommentsActive);
+    }
+
+    public void ShowPostThreeComments()
+    {
+        isPostCommentsActive = !isPostCommentsActive;
+
+
+        PostThreeOnFeedComments.SetActive(isPostCommentsActive);
+    }
+
+    public void ShowPostFourComments()
+    {
+        isPostCommentsActive = !isPostCommentsActive;
+
+
+        PostFourOnFeedComments.SetActive(isPostCommentsActive);
+    }
+
 
     public void OpenSnapProfile()
     {
