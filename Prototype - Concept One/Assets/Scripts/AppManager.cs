@@ -19,10 +19,15 @@ public class AppManager : MonoBehaviour
     public GameObject secondHomeButton;
     public GameObject FeedPage;
     public GameObject ProfilePage;
+    public GameObject DMsPage;
     public GameObject PostOneOnFeedComments;
     public GameObject PostTwoOnFeedComments;
     public GameObject PostThreeOnFeedComments;
     public GameObject PostFourOnFeedComments;
+
+    public GameObject OpenBarbDm;
+    public GameObject OpenRobDm;
+    public GameObject OpenTrishDm;
 
     private bool isPostCommentsActive = false;
 
@@ -76,6 +81,29 @@ public class AppManager : MonoBehaviour
 
     }
 
+    public void OpenTrishDM()
+    {
+        OpenTrishDm.SetActive(true);
+    }
+
+    public void OpenRobDM()
+    {
+        OpenRobDm.SetActive(true);
+    }
+
+    public void OpenBarbhDM()
+    {
+        OpenBarbDm.SetActive(true);
+    }
+
+    public void CloseDmPage()
+    {
+        OpenBarbDm.SetActive(false);
+        OpenRobDm.SetActive(false);
+        OpenTrishDm.SetActive(false);
+    }
+
+
     public void Openapp1()
     {
         openedAppImage.SetActive(true);
@@ -105,6 +133,7 @@ public class AppManager : MonoBehaviour
         secondHomeButton.SetActive(false);
         FeedPage.SetActive(false);
         ProfilePage.SetActive(false);
+        DMsPage.SetActive(false);
     }
 
     public void Openapp3()   
@@ -136,15 +165,25 @@ public class AppManager : MonoBehaviour
 
     public void OpenFeedPage()
     {
+        DMsPage.SetActive(false);
         FeedPage.SetActive(true);
         ProfilePage.SetActive(false);
     }
 
     public void OpenProfilePage()
     {
+        DMsPage.SetActive(false);
         FeedPage.SetActive(false);
         ProfilePage.SetActive(true);
     }
+
+    public void OpenDmsPage()
+    {
+        DMsPage.SetActive(true);
+        FeedPage.SetActive(false);
+        ProfilePage.SetActive(false);
+    }
+
 
     public void ShowPostOneComments()
     {
