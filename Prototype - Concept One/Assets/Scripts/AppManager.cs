@@ -101,6 +101,7 @@ public class AppManager : MonoBehaviour
         OpenBarbDm.SetActive(false);
         OpenRobDm.SetActive(false);
         OpenTrishDm.SetActive(false);
+       
     }
 
 
@@ -168,6 +169,10 @@ public class AppManager : MonoBehaviour
         DMsPage.SetActive(false);
         FeedPage.SetActive(true);
         ProfilePage.SetActive(false);
+        PostOneOnFeedComments.SetActive(false);
+        PostTwoOnFeedComments.SetActive(false);
+        PostThreeOnFeedComments.SetActive(false);
+        PostFourOnFeedComments.SetActive(false);
     }
 
     public void OpenProfilePage()
@@ -175,6 +180,10 @@ public class AppManager : MonoBehaviour
         DMsPage.SetActive(false);
         FeedPage.SetActive(false);
         ProfilePage.SetActive(true);
+        PostOneOnFeedComments.SetActive(false);
+        PostTwoOnFeedComments.SetActive(false);
+        PostThreeOnFeedComments.SetActive(false);
+        PostFourOnFeedComments.SetActive(false);
     }
 
     public void OpenDmsPage()
@@ -182,6 +191,10 @@ public class AppManager : MonoBehaviour
         DMsPage.SetActive(true);
         FeedPage.SetActive(false);
         ProfilePage.SetActive(false);
+        PostOneOnFeedComments.SetActive(false);
+        PostTwoOnFeedComments.SetActive(false);
+        PostThreeOnFeedComments.SetActive(false);
+        PostFourOnFeedComments.SetActive(false);
     }
 
 
