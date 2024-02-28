@@ -13,7 +13,12 @@ using UnityEngine.SceneManagement;
         public TMP_Text pointsT;
         public TMP_Text timerT;
 
-        public int randomNumber = 0;
+    private bool delayFinished = false;
+    private float delayTimer = 0f;
+    private float delayDuration = 10f;
+
+
+    public int randomNumber = 0;
         public int points = 0;
 
     
@@ -56,29 +61,40 @@ using UnityEngine.SceneManagement;
     // Update is called once per frame
     void Update()
         {
-            if (timeLeft > 0f)
+        if (!delayFinished)
+        {
+            delayTimer += Time.deltaTime;
+            if (delayTimer >= delayDuration)
             {
-            timeLeft -= Time.deltaTime;
+                delayFinished = true;
             }
-            else if (timeLeft == 0f)
+            else
             {
-                Debug.Log("U lose");
-                SceneManager.LoadScene(3);
-
+                return; // Skip the rest of the Update() method until delay is finished
             }
-             else if (timeLeft < 0f)
-            {
-                timeLeft = 0f;
-            }
-            
-        timerT.text = $"{Mathf.Round(timeLeft)}";
         }
 
-        public void ChangeText(int choice)
+        if (timeLeft > 0f)
         {
+            timeLeft -= Time.deltaTime;
+        }
+        else if (timeLeft == 0f)
+        {
+            Debug.Log("U lose");
+            SceneManager.LoadScene(3);
+        }
+        else if (timeLeft < 0f)
+        {
+            timeLeft = 0f;
+        }
+
+        timerT.text = $"{Mathf.Round(timeLeft)}";
+    }
+    public void ChangeText(int choice)
+    {
         if (choice == rightOrWrong[randomNumber]) // if right choice
-        { 
-             points++;
+        {
+            points++;
             timeLeft += 2f; //1f
 
             if (points >= 10)
@@ -90,12 +106,12 @@ using UnityEngine.SceneManagement;
         else        // if wrong choice
         {
             timeLeft -= 1f; // 0.5f
-            points--;
+            points = Mathf.Max(0, points - 1); // Ensure points don't go below 0
         }
-            randomNumber = Random.Range(0, 9);
-        //Debug.Log($"{points}");
-            pointsT.text = $"{points}/10";
-            mainText.text = emailList[randomNumber];
-        }
+        randomNumber = Random.Range(0, 9);
+        pointsT.text = $"{points}/10";
+        mainText.text = emailList[randomNumber];
     }
+
+}
 

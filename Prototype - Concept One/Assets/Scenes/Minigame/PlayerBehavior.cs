@@ -5,29 +5,33 @@ using UnityEngine;
 
     public class PlayerBehavior : MonoBehaviour
     {
-        public float speed = 100f;
-        public float timer = 0f;
-        public float timerLength = 0.5f;
 
-        public bool movementEnabled = true;
+    public float speed = 100f;
+    public float timer = 0f;
+    public float timerLength = 0.5f;
+    public bool movementEnabled = false; // Initially disabled movement
 
-        public GameObject wrong;
-        public GameObject right;
+    public GameObject wrong;
+    public GameObject right;
+    public TextBehaviour textScript;
 
-        public TextBehaviour textScript;
+    private float initialDelay = 10f; // Initial delay in seconds
+    private bool initialDelayFinished = false;
 
-
-        // Start is called before the first frame update
     void Start()
-        {
-        textScript = GameObject.Find("text stuff").GetComponent<TextBehaviour> ();
-        }
+    {
+        textScript = GameObject.Find("text stuff").GetComponent<TextBehaviour>();
+        Invoke(nameof(EnableMovement), initialDelay); // Invoke EnableMovement after initial delay
+    }
 
-        // Update is called once per frame
-        void Update()
-        {
 
-            if (movementEnabled)
+    // Update is called once per frame
+    void Update()
+        {
+        if (!initialDelayFinished)
+            return;
+
+        if (movementEnabled)
             {
                 if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || Input.GetMouseButton(0))
                 {
@@ -98,5 +102,11 @@ using UnityEngine;
                 textScript.ChangeText(1);
             }
         }
+
+    void EnableMovement()
+    {
+        movementEnabled = true;
+        initialDelayFinished = true;
     }
+}
 

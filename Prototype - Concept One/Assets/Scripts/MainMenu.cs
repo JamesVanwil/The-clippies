@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
     public void BackTo3DView()
     {
       
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("3DView");
 
     }
 }
