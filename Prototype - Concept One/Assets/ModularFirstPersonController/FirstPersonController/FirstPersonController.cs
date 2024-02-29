@@ -62,6 +62,8 @@ public class FirstPersonController : MonoBehaviour
     // Internal Variables
     private bool isWalking = false;
 
+    private float rememberFOV = -6;
+
     #region Sprint
 
     public bool enableSprint = true;
@@ -263,11 +265,22 @@ public class FirstPersonController : MonoBehaviour
                 }
             }
 
+            if(rememberFOV == -6)
+            {
+                rememberFOV = playerCamera.fieldOfView;
+            }
+
             // Lerps camera.fieldOfView to allow for a smooth transistion
             if (isZoomed)
             {
                 playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, zoomFOV, zoomStepTime * Time.deltaTime);
             }
+            else if(playerCamera.fieldOfView < 55f && rememberFOV > 0)
+            {
+                //playerCamera.fieldOfView = rememberFOV;
+                playerCamera.fieldOfView = Mathf.Lerp(rememberFOV, playerCamera.fieldOfView, -zoomStepTime * Time.deltaTime);
+            }
+         
             #endregion
         }
     }
