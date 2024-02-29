@@ -60,7 +60,7 @@ public class SceneChange : MonoBehaviour
             }
             else if (hit.collider.CompareTag("Phone"))
             {
-                SceneManager.LoadScene("PhoneScene");
+                SceneManager.LoadScene(5); // Changed to load "Scene5" when looking at the phone.
             }
         }
     }
