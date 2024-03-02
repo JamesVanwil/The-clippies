@@ -12,11 +12,20 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(6);
     }
 
+    public void Help()
+    {
+        SceneManager.LoadScene(7);
+    }
+
     public void Quit()
     {
         Application.Quit();
     }
 
+    public void Menu()
+    {
+        SceneManager.LoadScene(0);
+    }
 
 
     public void BackTo3DView()
