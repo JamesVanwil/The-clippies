@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ChangeScenes : MonoBehaviour
 {
     private bool canChangeScene = false;
+    public int timer = 0;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,12 +32,17 @@ public class ChangeScenes : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-
+            this.timer = PlayerBehavior.timers;
+            HintTimer.timer = this.timer;
             SceneManager.LoadScene(1);
+            HintTimer.timer = this.timer;
         }
     }
     public void GoToHintScene()
     {
+        this.timer = HintTimer.timer;
+        PlayerBehavior.timers = this.timer;
         SceneManager.LoadScene(4);
+        PlayerBehavior.timers = this.timer;
     }
 }

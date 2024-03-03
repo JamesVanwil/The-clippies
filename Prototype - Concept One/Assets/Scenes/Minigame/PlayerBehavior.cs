@@ -5,6 +5,7 @@ using UnityEngine;
 
     public class PlayerBehavior : MonoBehaviour
     {
+    public static int timers = 0;
 
     public float speed = 100f;
     public float timer = 0f;
@@ -27,7 +28,7 @@ using UnityEngine;
 
     // Update is called once per frame
     void Update()
-        {
+    {
         if (!initialDelayFinished)
             return;
 

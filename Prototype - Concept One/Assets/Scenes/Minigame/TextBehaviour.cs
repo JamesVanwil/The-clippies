@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 
 
-    public class TextBehaviour : MonoBehaviour
-    {
-
-        public TMP_Text mainText;
-        public TMP_Text pointsT;
-        public TMP_Text timerT;
+public class TextBehaviour : MonoBehaviour
+{
+    public TMP_Text introductionText;
+    public TMP_Text mainText;
+    public TMP_Text pointsT;
+    public TMP_Text timerT;
 
     private bool delayFinished = false;
     private float delayTimer = 0f;
@@ -19,7 +19,7 @@ using UnityEngine.SceneManagement;
 
 
     public int randomNumber = 0;
-        public int points = 0;
+    public int points = 0;
 
     
     public float timeLeft = 10f;
@@ -28,12 +28,12 @@ using UnityEngine.SceneManagement;
     public int[] rightOrWrong; //{1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
 
         
-        // Start is called before the first frame update
-        void Start()
-        {
-        emailList = new string[]{ "Defenitlynotavirus@completelysafe.com", "youwon@freemoney.com", "ngoctrinh1403@gmail.com", "customerservice@amazonhelp.art",
+    // Start is called before the first frame update
+    void Start()
+    {
+        emailList = new string[]{ "Defenitlynotavirus@completelysafe.com", "youwon@freemoney.com", "ngoctrinh1403@gmail.com", "customerservice@amazonhelp.ru",
             "Donotreply@mywebshop.com", "customerservice@amazon.com", "automail@bol.com", "noreply@steampowered.com", "info@megekko.nl", "noreply@dhlparcel.nl", };
-        rightOrWrong = new int[] { 0, 0, 0, 0, 0, 1, 1, 1, 1, 1 };
+        rightOrWrong = new int[] { 0, 0, 0, 0, 1, 1, 1, 1, 1, 1 };
         //emailList[0] = "";
         //emailList[1] = "noreply@dhlparcel.nl";
         //emailList[2] = "2";
@@ -56,17 +56,18 @@ using UnityEngine.SceneManagement;
         //rightOrWrong[7] = 1;
         //rightOrWrong[8] = 1;
         //rightOrWrong[9] = 1;
-        }
+    }
 
     // Update is called once per frame
     void Update()
-        {
+    {
         if (!delayFinished)
         {
             delayTimer += Time.deltaTime;
             if (delayTimer >= delayDuration)
             {
                 delayFinished = true;
+                introductionText.enabled = false;
             }
             else
             {
@@ -100,7 +101,7 @@ using UnityEngine.SceneManagement;
             if (points >= 10)
             {
                 //unlock hint
-                SceneManager.LoadScene(3);
+               
             }
         }
         else        // if wrong choice
@@ -108,9 +109,18 @@ using UnityEngine.SceneManagement;
             timeLeft -= 1f; // 0.5f
             points = Mathf.Max(0, points - 1); // Ensure points don't go below 0
         }
-        randomNumber = Random.Range(0, 9);
+        randomNumber = Random.Range(0, 10);
         pointsT.text = $"{points}/10";
         mainText.text = emailList[randomNumber];
+
+        if(points >= 10)
+        {
+            PlayerBehavior.timers += 500;
+            points = 0;
+            HintTimer.timer = PlayerBehavior.timers;
+            SceneManager.LoadScene(1);
+            HintTimer.timer = PlayerBehavior.timers;
+        }
     }
 
 }

@@ -16,7 +16,7 @@ public class HintTimer : MonoBehaviour
     [SerializeField]
     private int hintTimerFourth = 0;
 
-    private int timer = 0;
+    public static int timer = 0;
 
     [SerializeField]
     private GameObject hintOneNote;
@@ -43,7 +43,7 @@ public class HintTimer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        ++timer;
+        //++timer;
 
         if(timer == hintTimerFirst + minigameAddedWaitingTime)
         {
@@ -57,12 +57,12 @@ public class HintTimer : MonoBehaviour
 
         if (timer == hintTimerThird + minigameAddedWaitingTime)
         {
-            hintThirdNote.SetActive(true);
+            //hintThirdNote.SetActive(true);
         }
 
         if (timer == hintTimerFourth + minigameAddedWaitingTime)
         {
-            hintFourthNote.SetActive(true);
+            //hintFourthNote.SetActive(true);
         }
     }
 }
