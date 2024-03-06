@@ -24,10 +24,4 @@ public class Fullscreen : MonoBehaviour
     {
         Browser.SetActive(true);
     }
-
-   
-
-
-
-
 }

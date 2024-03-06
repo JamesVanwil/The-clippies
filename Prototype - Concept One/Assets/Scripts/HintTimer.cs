@@ -45,24 +45,24 @@ public class HintTimer : MonoBehaviour
     {
         //++timer;
 
-        if(timer == hintTimerFirst + minigameAddedWaitingTime)
+        if(timer >= hintTimerFirst + minigameAddedWaitingTime && !hintOneNote.active)
         {
             hintOneNote.SetActive(true);
         }
 
-        if (timer == hintTimerSecond + minigameAddedWaitingTime)
+        if (timer >= hintTimerSecond + minigameAddedWaitingTime && !hintSecondNote.active)
         {
             hintSecondNote.SetActive(true);
         }
 
-        if (timer == hintTimerThird + minigameAddedWaitingTime)
+        if (timer >= hintTimerThird + minigameAddedWaitingTime && !hintThirdNote.active)
         {
-            //hintThirdNote.SetActive(true);
+            hintThirdNote.SetActive(true);
         }
 
-        if (timer == hintTimerFourth + minigameAddedWaitingTime)
+        if (timer >= hintTimerFourth + minigameAddedWaitingTime && !hintFourthNote.active)
         {
-            //hintFourthNote.SetActive(true);
+            hintFourthNote.SetActive(true);
         }
     }
 }

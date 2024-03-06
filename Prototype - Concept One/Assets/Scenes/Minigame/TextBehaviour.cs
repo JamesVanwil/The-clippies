@@ -115,11 +115,9 @@ public class TextBehaviour : MonoBehaviour
 
         if(points >= 10)
         {
-            PlayerBehavior.timers += 500;
+            HintTimer.timer += 500;
             points = 0;
-            HintTimer.timer = PlayerBehavior.timers;
             SceneManager.LoadScene(1);
-            HintTimer.timer = PlayerBehavior.timers;
         }
     }
 
