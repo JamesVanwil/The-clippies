@@ -27,6 +27,8 @@ public class TextBehaviour : MonoBehaviour
     public string[] emailList; //{"0", "noreply@dhlparcel.nl", "2", "3", "4", "5", "6", "7", "8", "9", };
     public int[] rightOrWrong; //{1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
 
+    public bool startGame = false;
+
         
     // Start is called before the first frame update
     void Start()
@@ -61,35 +63,38 @@ public class TextBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!delayFinished)
+        if (startGame)
         {
-            delayTimer += Time.deltaTime;
-            if (delayTimer >= delayDuration)
+            if (!delayFinished)
             {
-                delayFinished = true;
-                introductionText.enabled = false;
+                delayTimer += Time.deltaTime;
+                if (delayTimer >= delayDuration)
+                {
+                    delayFinished = true;
+                    introductionText.enabled = false;
+                }
+                else
+                {
+                    //return; // Skip the rest of the Update() method until delay is finished
+                }
             }
-            else
+
+            if (timeLeft > 0f)
             {
-                return; // Skip the rest of the Update() method until delay is finished
+                timeLeft -= Time.deltaTime;
             }
-        }
+            else if (timeLeft == 0f)
+            {
+                Debug.Log("U lose");
+                SceneManager.LoadScene(3);
+            }
+            else if (timeLeft < 0f)
+            {
+                timeLeft = 0f;
+            }
 
-        if (timeLeft > 0f)
-        {
-            timeLeft -= Time.deltaTime;
-        }
-        else if (timeLeft == 0f)
-        {
-            Debug.Log("U lose");
-            SceneManager.LoadScene(3);
-        }
-        else if (timeLeft < 0f)
-        {
-            timeLeft = 0f;
-        }
-
-        timerT.text = $"{Mathf.Round(timeLeft)}";
+            timerT.text = $"{Mathf.Round(timeLeft)}";
+        }    
     }
     public void ChangeText(int choice)
     {

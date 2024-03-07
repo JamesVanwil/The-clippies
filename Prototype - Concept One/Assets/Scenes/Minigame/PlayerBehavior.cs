@@ -5,6 +5,7 @@ using UnityEngine;
 
     public class PlayerBehavior : MonoBehaviour
     {
+    
     public float speed = 100f;
     public float timer = 0f;
     public float timerLength = 0.5f;
@@ -13,6 +14,8 @@ using UnityEngine;
     public GameObject wrong;
     public GameObject right;
     public TextBehaviour textScript;
+
+    public bool startGame = false;
 
     private float initialDelay = 10f; // Initial delay in seconds
     private bool initialDelayFinished = false;
@@ -26,44 +29,59 @@ using UnityEngine;
 
     // Update is called once per frame
     void Update()
-    {
-        if (!initialDelayFinished)
-            return;
+    {   
+        if (startGame)
+        {
+            //if (!initialDelayFinished)
+            // return;
 
-        if (movementEnabled)
-            {
-                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || Input.GetMouseButton(0))
+            if (movementEnabled)
                 {
-                    transform.position += new Vector3(-1 * speed * Time.deltaTime, 0, 0);
-                }
+                    if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || Input.GetMouseButton(0))
+                    {
+                        transform.position += new Vector3(-1 * speed * Time.deltaTime, 0, 0);
+                    }
 
-                if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || Input.GetMouseButton(1))
-                {
-                    transform.position += new Vector3(1 * speed * Time.deltaTime, 0, 0);
-                }
-            }
-            else
-            {
-                //timer to give time for the player to let go of the button
-                if (timer < timerLength)
-                {
-                    timer += 1 * Time.deltaTime;
+                    if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || Input.GetMouseButton(1))
+                    {
+                        transform.position += new Vector3(1 * speed * Time.deltaTime, 0, 0);
+                    }
                 }
                 else
                 {
-                    timer = 0;
-                    movementEnabled = true;
+                    // player must let go of key after position reset to middle of screen to be able to move again
+                    if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetMouseButtonUp(0))
+                    {
+                        movementEnabled = true;
+                    } 
+
+                    if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetMouseButtonUp(1))
+                    {
+                        movementEnabled = true;
+                    }
+
+
+                    //timer to give time for the player to let go of the button
+                //   if (timer < timerLength)
+                //   {
+                //       timer += 1 * Time.deltaTime;
+                //   }
+                //   else
+                //   {
+                //       timer = 0;
+                //      movementEnabled = true;
+                //   }
+
+                    //for (int _i = 0, _i < timerLength, _i++)
+                    //{
+
+                    //}
+                    //else
+                    //{
+                    //    movementEnabled = true;
+                    //}
                 }
-
-                //for (int _i = 0, _i < timerLength, _i++)
-                //{
-
-                //}
-                //else
-                //{
-                //    movementEnabled = true;
-                //}
-            }
+        }
 
 
 
@@ -84,7 +102,7 @@ using UnityEngine;
             //{
             //    transform.position.x += 1 * Time.deltaTime;
             //}
-        }
+    }
 
         void OnCollisionEnter(Collision collision)
         {
@@ -102,9 +120,15 @@ using UnityEngine;
             }
         }
 
+        public void StartGame()
+        {
+            startGame = true;
+            textScript.startGame = true;
+        }
+
     void EnableMovement()
     {
-        movementEnabled = true;
+        //movementEnabled = true;
         initialDelayFinished = true;
     }
 }
