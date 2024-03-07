@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class TextBehaviour : MonoBehaviour
 {
-    public TMP_Text introductionText;
+    public GameObject introductionText;
     public TMP_Text mainText;
     public TMP_Text pointsT;
     public TMP_Text timerT;
@@ -71,7 +71,7 @@ public class TextBehaviour : MonoBehaviour
                 if (delayTimer >= delayDuration)
                 {
                     delayFinished = true;
-                    introductionText.enabled = false;
+                    introductionText.SetActive(false);
                 }
                 else
                 {
