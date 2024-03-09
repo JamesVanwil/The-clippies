@@ -35,7 +35,7 @@ public class TextBehaviour : MonoBehaviour
     {
         emailList = new string[]{ "Defenitlynotavirus@completelysafe.com", "youwon@freemoney.com", "ngoctrinh1403@gmail.com", "customerservice@amazonhelp.ru",
             "Donotreply@mywebshop.com", "customerservice@amazon.com", "automail@bol.com", "noreply@steampowered.com", "info@megekko.nl", "noreply@dhlparcel.nl", };
-        rightOrWrong = new int[] { 0, 0, 0, 0, 1, 1, 1, 1, 1, 1 };
+        rightOrWrong = new int[] { 0, 0, 0, 0, 0, 1, 1, 1, 1, 1 };
         //emailList[0] = "";
         //emailList[1] = "noreply@dhlparcel.nl";
         //emailList[2] = "2";
