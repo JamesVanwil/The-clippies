@@ -200,34 +200,34 @@ public class AppManager : MonoBehaviour
 
     public void ShowPostOneComments()
     {
-        isPostCommentsActive = !isPostCommentsActive;
-
-        
-        PostOneOnFeedComments.SetActive(isPostCommentsActive);
+        PostOneOnFeedComments.SetActive(true);
+        PostTwoOnFeedComments.SetActive(false);
+        PostThreeOnFeedComments.SetActive(false);
+        PostFourOnFeedComments.SetActive(false);
     }
 
     public void ShowPostTwoComments()
     {
-        isPostCommentsActive = !isPostCommentsActive;
-
-
-        PostTwoOnFeedComments.SetActive(isPostCommentsActive);
+        PostOneOnFeedComments.SetActive(false);
+        PostTwoOnFeedComments.SetActive(true);
+        PostThreeOnFeedComments.SetActive(false);
+        PostFourOnFeedComments.SetActive(false);
     }
 
     public void ShowPostThreeComments()
     {
-        isPostCommentsActive = !isPostCommentsActive;
-
-
-        PostThreeOnFeedComments.SetActive(isPostCommentsActive);
+        PostOneOnFeedComments.SetActive(false);
+        PostTwoOnFeedComments.SetActive(false);
+        PostThreeOnFeedComments.SetActive(true);
+        PostFourOnFeedComments.SetActive(false);
     }
 
     public void ShowPostFourComments()
     {
-        isPostCommentsActive = !isPostCommentsActive;
-
-
-        PostFourOnFeedComments.SetActive(isPostCommentsActive);
+        PostOneOnFeedComments.SetActive(false);
+        PostTwoOnFeedComments.SetActive(false);
+        PostThreeOnFeedComments.SetActive(false);
+        PostFourOnFeedComments.SetActive(true);
     }
 
 
