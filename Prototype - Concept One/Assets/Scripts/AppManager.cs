@@ -255,20 +255,23 @@ public class AppManager : MonoBehaviour
 
     public void MemoriesCommentPhoto1()
     {
-        isPostCommentsActive = !isPostCommentsActive;
-        DateTimePost1.SetActive(isPostCommentsActive);
+        DateTimePost1.SetActive(true);
+        DateTimePost2.SetActive(false);
+        DateTimePost3.SetActive(false);
     }
 
     public void MemoriesCommentPhoto2()
     {
-        isPostCommentsActive = !isPostCommentsActive;
-        DateTimePost2.SetActive(isPostCommentsActive);
+        DateTimePost1.SetActive(false);
+        DateTimePost2.SetActive(true);
+        DateTimePost3.SetActive(false);
     }
 
     public void MemoriesCommentPhoto3()
     {
-        isPostCommentsActive = !isPostCommentsActive;
-        DateTimePost3.SetActive(isPostCommentsActive);
+        DateTimePost1.SetActive(false);
+        DateTimePost2.SetActive(false);
+        DateTimePost3.SetActive(true);
     }
 
     public void Open112App()
